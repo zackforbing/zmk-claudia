@@ -74,10 +74,10 @@
 
         NUM+FUNC {
             bindings = <
-&kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3     &kp NUMBER_4   &kp N5        &trans     &kp F9                  &kp F10       &kp F11           &kp F12
-&kp NUMBER_6  &kp N7        &kp N8           &kp N9         &kp N0        &trans     &hm RIGHT_SHIFT LG(F5)  &hm RCTRL F6  &hm RIGHT_ALT F7  &hm RIGHT_GUI F8
-&kp KP_PLUS   &kp KP_MINUS  &kp KP_MULTIPLY  &kp KP_DIVIDE  &kp KP_DOT    &trans     &kp F1                  &kp F2        &kp F3            &kp F4
-                            &lt 3 A          &trans                       &kp ENTER                          &kp N0
+&kp NUMBER_1     &kp NUMBER_2     &kp NUMBER_3     &kp NUMBER_4   &kp N5        &trans       &kp F9                  &kp F10       &kp F11           &kp F12
+&hm LEFT_GUI N6  &hm LEFT_ALT N7  &hm LCTRL N8     &hs LSHFT N9   &kp N0        &trans       &hm RIGHT_SHIFT LG(F5)  &hm RCTRL F6  &hm RIGHT_ALT F7  &hm RIGHT_GUI F8
+&kp KP_PLUS      &kp KP_MINUS     &kp KP_MULTIPLY  &kp KP_DIVIDE  &kp KP_DOT    &trans       &kp F1                  &kp F2        &kp F3            &kp F4
+                                  &lt 3 TAB        &trans                       &kp LS(TAB)                          &trans
             >;
         };
 
