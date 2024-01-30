@@ -7,14 +7,71 @@
     combos {
         compatible = "zmk,combos";
 
-        lang {
-            bindings = <&kp LG(SPACE)>;
-            key-positions = <30 31>;
+        left_enter {
+            bindings = <&kp ENTER>;
+            key-positions = <1 12 23>;
         };
 
-        spotlight {
-            bindings = <&kp LC(SPACE)>;
-            key-positions = <32 33>;
+        right_enter {
+            bindings = <&kp ENTER>;
+            key-positions = <8 17 26>;
+        };
+
+        esc {
+            bindings = <&kp ESCAPE>;
+            key-positions = <0 1>;
+        };
+
+        tab {
+            bindings = <&kp TAB>;
+            key-positions = <3 14>;
+        };
+
+        shift_tab {
+            bindings = <&kp LS(TAB)>;
+            key-positions = <2 13>;
+        };
+
+        hold_space {
+            bindings = <&kp SPACE>;
+            key-positions = <31 23>;
+        };
+
+        caps_word {
+            bindings = <&caps_word>;
+            key-positions = <14 15>;
+        };
+
+        toggle_nav {
+            bindings = <&tog 2>;
+            key-positions = <11 2 13>;
+            layers = <0 2>;
+            require-prior-idle-ms = <350>;
+        };
+
+        jsdoc {
+            bindings = <&jsdoc>;
+            key-positions = <29 28>;
+        };
+
+        caps_lock {
+            bindings = <&kp CAPSLOCK>;
+            key-positions = <13 12 16 17>;
+        };
+
+        screen_shot {
+            bindings = <&kp LS(LG(S))>;
+            key-positions = <0 11>;
+        };
+
+        reset {
+            bindings = <&sys_reset>;
+            key-positions = <0 31 32 9>;
+        };
+
+        bootloader {
+            bindings = <&bootloader>;
+            key-positions = <4 14 5 15>;
         };
     };
 
@@ -57,6 +114,22 @@
             bindings = <&mt LCTRL ENTER>, <&kp TAB>;
 
             tapping-term-ms = <250>;
+        };
+    };
+
+    macros {
+        jsdoc: jsdoc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp FSLH &kp STAR &kp STAR &kp SPACE>;
+            label = "JSDOC";
+        };
+
+        pw: pw {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(Y) &kp F &kp LS(P) &kp N2 &kp N7 &kp E &kp X &kp AT &kp N4 &kp PRCNT &kp N4 &kp LS(V) &kp LS(E) &kp LS(F) &kp LS(T)>;
+            label = "PW";
         };
     };
 
