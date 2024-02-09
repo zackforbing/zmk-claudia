@@ -151,10 +151,10 @@
 
         NUM+FUNC {
             bindings = <
-&kp NUMBER_1     &kp NUMBER_2     &kp NUMBER_3     &kp NUMBER_4   &kp N5        &trans       &kp F9                  &kp F10       &kp F11           &kp F12
-&hm LEFT_GUI N6  &hm LEFT_ALT N7  &hm LCTRL N8     &hs LSHFT N9   &kp N0        &trans       &hm RIGHT_SHIFT LG(F5)  &hm RCTRL F6  &hm RIGHT_ALT F7  &hm RIGHT_GUI F8
-&kp KP_PLUS      &kp KP_MINUS     &kp KP_MULTIPLY  &kp KP_DIVIDE  &kp KP_DOT    &trans       &kp F1                  &kp F2        &kp F3            &kp F4
-                                  &lt 3 TAB        &trans                       &kp LS(TAB)                          &trans
+&kp NUMBER_1     &kp NUMBER_2     &kp NUMBER_3     &kp NUMBER_4   &kp N5        &trans     &kp F9                  &kp F10       &kp F11           &kp F12
+&hm LEFT_GUI N6  &hm LEFT_ALT N7  &hm LCTRL N8     &hs LSHFT N9   &kp N0        &trans     &hm RIGHT_SHIFT LG(F5)  &hm RCTRL F6  &hm RIGHT_ALT F7  &hm RIGHT_GUI F8
+&kp KP_PLUS      &kp KP_MINUS     &kp KP_MULTIPLY  &kp KP_DIVIDE  &kp KP_DOT    &trans     &kp F1                  &kp F2        &kp F3            &kp F4
+                                  &lt 3 LS(TAB)    &trans                       &lt 4 TAB                          &trans
             >;
         };
 
@@ -178,10 +178,10 @@
 
         FUN {
             bindings = <
-&kp EXCL   &kp AT    &kp HASH      &kp DLLR    &kp PRCNT     &kp CARET  &kp AMPS   &kp STAR   &kp LPAR  &kp RPAR
-&kp F1     &kp F2    &kp F3        &kp F4      &kp F5        &kp F6     &kp F7     &kp F8     &kp F9    &kp F10
-&kp LSHFT  &kp LALT  &out OUT_TOG  &bt BT_CLR  &sys_reset    &trans     &kp EQUAL  &kp CARET  &kp AMPS  &kp QMARK
-                     &trans        &trans                    &trans                &trans
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp CARET  &kp AMPS   &kp STAR   &kp LPAR  &kp RPAR
+&kp F1        &kp F2        &kp F3        &kp F4        &kp F5          &kp F6     &kp F7     &kp F8     &kp F9    &kp F10
+&kp LSHFT     &kp LALT      &out OUT_TOG  &bt BT_CLR    &sys_reset      &trans     &kp EQUAL  &kp CARET  &kp AMPS  &kp QMARK
+                            &trans        &trans                        &trans                &trans
             >;
         };
     };
