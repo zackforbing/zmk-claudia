@@ -78,6 +78,12 @@
             bindings = <&bt BT_CLR_ALL>;
             key-positions = <20 21 29 28 22 27>;
         };
+
+        pw {
+            bindings = <&pw>;
+            key-positions = <10 1 8 19>;
+            layers = <1>;
+        };
     };
 
     behaviors {
