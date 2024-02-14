@@ -73,6 +73,11 @@
             bindings = <&bootloader>;
             key-positions = <4 14 5 15>;
         };
+
+        bt_clear_all {
+            bindings = <&bt BT_CLR_ALL>;
+            key-positions = <20 21 29 28 22 27>;
+        };
     };
 
     behaviors {
@@ -138,7 +143,7 @@
     keymap {
         compatible = "zmk,keymap";
 
-        BASE {
+        Base {
             bindings = <
 &kp Q           &kp W           &kp E        &kp R             &kp T    &kp Y            &kp U        &kp I         &kp O            &kp P
 &hm LEFT_GUI A  &hm LEFT_ALT S  &hm LCTRL D  &hs LEFT_SHIFT F  &kp G    &kp H            &hs RSHFT J  &hm RCTRL K   &hm RIGHT_ALT L  &hm RMETA SQT
@@ -147,39 +152,30 @@
             >;
         };
 
-        NUM+FUNC {
+        Num+Sym {
             bindings = <
-&kp NUMBER_1     &kp NUMBER_2     &kp NUMBER_3     &kp NUMBER_4   &kp N5        &trans     &kp F9                  &kp F10       &kp F11           &kp F12
-&hm LEFT_GUI N6  &hm LEFT_ALT N7  &hm LCTRL N8     &hs LSHFT N9   &kp N0        &trans     &hm RIGHT_SHIFT LG(F5)  &hm RCTRL F6  &hm RIGHT_ALT F7  &hm RIGHT_GUI F8
-&kp KP_PLUS      &kp KP_MINUS     &kp KP_MULTIPLY  &kp KP_DIVIDE  &kp KP_DOT    &trans     &kp F1                  &kp F2        &kp F3            &kp F4
-                                  &lt 3 LS(TAB)    &trans                       &lt 4 TAB                          &trans
+&kp NUMBER_1     &kp NUMBER_2     &kp NUMBER_3     &kp NUMBER_4   &kp N5        &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS          &kp UNDERSCORE   &kp PLUS             &kp TILDE
+&hm LEFT_GUI N6  &hm LEFT_ALT N7  &hm LCTRL N8     &hs LSHFT N9   &kp N0        &kp LEFT_BRACKET      &hm RIGHT_SHIFT RIGHT_BRACKET  &hm RCTRL MINUS  &hm RIGHT_ALT EQUAL  &hm RIGHT_GUI GRAVE
+&kp KP_PLUS      &kp KP_MINUS     &kp KP_MULTIPLY  &kp KP_DIVIDE  &kp KP_DOT    &kp LEFT_BRACE        &kp RIGHT_BRACE                &kp SEMI         &kp COLON            &kp BACKSLASH
+                                  &lt 3 LS(TAB)    &trans                       &lt 3 TAB                                            &trans
             >;
         };
 
-        NAV {
+        Nav+Func {
             bindings = <
-&mt LEFT_SHIFT PAGE_UP  &mt LEFT_ALT HOME  &mt LS(LCTRL) UP_ARROW  &mt LALT END  &kp LS(LA(LC(BACKSLASH)))    &trans  &kp F9  &kp F10      &kp F11          &kp F12
-&mt LCTRL PAGE_DOWN     &kp LEFT           &kp DOWN                &kp RIGHT     &kp BACKSPACE                &trans  &kp F5  &kp F6       &kp KP_NUMBER_6  &kp KP_MINUS
-&kp LC(Z)               &kp LC(X)          &kp LC(C)               &kp LC(V)     &kp LS(LC(K))                &trans  &kp F1  &kp F2       &kp F3           &kp F4
-                                           &trans                  &kp ENTER                                  &trans          &lt 3 ENTER
+&mt LEFT_SHIFT PAGE_UP  &mt LEFT_ALT HOME  &mt LS(LCTRL) UP_ARROW  &mt LALT END  &kp LS(LA(LC(BACKSLASH)))    &trans  &kp F9        &kp F10       &kp F11          &kp F12
+&mt LCTRL PAGE_DOWN     &kp LEFT           &kp DOWN                &kp RIGHT     &kp BACKSPACE                &trans  &hs RSHFT F5  &hm RCTRL F6  &hm LEFT_ALT F7  &hm RMETA F8
+&kp LC(Z)               &kp LC(X)          &kp LC(C)               &kp LC(V)     &kp LS(LC(K))                &trans  &kp F1        &kp F2        &kp F3           &kp F4
+                                           &trans                  &kp LCTRL                                  &trans                &lt 3 TAB
             >;
         };
 
-        ADJ {
+        Bluetooth {
             bindings = <
-&kp BSLH   &trans    &trans  &trans  &kp PERCENT    &trans    &trans     &kp STAR           &kp MINUS      &kp LBKT
-&trans     &trans    &trans  &trans  &trans         &kp EXCL  &kp CARET  &kp AMPS           &kp QMARK      &kp SQT
-&kp LSHFT  &kp LALT  &trans  &trans  &trans         &trans    &trans     &kp LA(LS(EQUAL))  &kp LA(EQUAL)  &kp RBKT
-                     &trans  &trans                 &trans               &trans
-            >;
-        };
-
-        FUN {
-            bindings = <
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp CARET  &kp AMPS   &kp STAR   &kp LPAR  &kp RPAR
-&kp F1        &kp F2        &kp F3        &kp F4        &kp F5          &kp F6     &kp F7     &kp F8     &kp F9    &kp F10
-&kp LSHFT     &kp LALT      &out OUT_TOG  &bt BT_CLR    &sys_reset      &trans     &kp EQUAL  &kp CARET  &kp AMPS  &kp QMARK
-                            &trans        &trans                        &trans                &trans
+&bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4     &trans       &trans  &trans  &trans  &trans
+&bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4    &trans       &trans  &trans  &trans  &trans
+&trans         &trans         &out OUT_TOG   &bt BT_CLR     &sys_reset       &bootloader  &trans  &trans  &trans  &trans
+                              &trans         &trans                          &trans               &trans
             >;
         };
     };
